@@ -305,7 +305,7 @@ function theme_header_customize(WP_Customize_Manager $wp_customize)
 class Mobile_Walker_Nav_Menu extends Walker_Nav_Menu
 {
     // Помечаем элементы, у которых есть дети
-    public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
+    public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output)
     {
         $id_field = $this->db_fields['id'];
         if (!empty($children_elements[$element->$id_field])) {
