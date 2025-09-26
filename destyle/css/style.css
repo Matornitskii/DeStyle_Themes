@@ -1051,10 +1051,13 @@ footer {
 }
 
 .about-usblock-destely-sod-element>p {
-  margin-top: auto;
-  color: #535D62;
-  font-size: 22px;
-  font-weight: 700;
+.product-nogi-slider__slide-imgelement {
+  width: 100%;
+  background-position: center center;
+  background-size: contain;
+  height: 124px;
+  background-repeat: no-repeat;
+}
   line-height: 30px;
   margin-bottom: 0px;
 }
