@@ -1,0 +1,41 @@
+name: Deploy DeStyle Theme via FTP
+
+on:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: ./destyle/
+          server-dir: ${{ secrets.FTP_DIR }}/
+          state-name: ../.ftp-deploy-sync-state.json
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git/**
+            **/.git*
+            **/.github/**
+            **/.vscode/**
+            **/.idea/**
+            **/node_modules/**
+            **/*.map
+            **/.DS_Store
+            **/Thumbs.db
+          log-level: verbose
+          timeout: 60000
