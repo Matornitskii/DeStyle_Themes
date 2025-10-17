@@ -80,12 +80,7 @@ get_header();
               </div>
               <div class="product-harakt-sod-element-center"></div>
               <div class="product-harakt-sod-element-right">
-                <div class="product-harakt-sod-element-right-text">
-                  <?php
-                  // Разрешаем вывод безопасной HTML-разметки внутри значения атрибута.
-                  echo wp_kses_post($value);
-                  ?>
-                </div>
+                <p><?php echo esc_html($value); ?></p>
               </div>
             </div>
           <?php endforeach; ?>
