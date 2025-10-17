@@ -2028,23 +2028,10 @@ footer {
   margin-bottom: 32px;
 }
 
-.product-harakt-sod-element-left p {
+.product-harakt-sod-element p {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 24px;
-}
-
-/* Стилизуем контейнер с форматированным текстом атрибутов, чтобы сохранить внешний вид. */
-.product-harakt-sod-element-right-text {
-  color: #FFFFFF;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-/* Поддерживаем наследование цветов и подчеркиваний для ссылок внутри значений атрибутов. */
-.product-harakt-sod-element-right-text a {
-  color: #FFFFFF;
-  text-decoration: underline;
 }
 
 .product-harakt-sod-element {
